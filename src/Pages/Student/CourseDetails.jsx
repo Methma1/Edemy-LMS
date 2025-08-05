@@ -9,7 +9,7 @@ import Youtube from "react-youtube";
 const CourseDetails = () => {
   const { id } = useParams();
   const [courseData, setCourseData] = useState(null);
-  const [openSection, setOpenSection] = useState({});
+  const [openSection, setOpenSections] = useState({});
   const [isAlreadyEnrolled, setIsAlreadyEnrolled] = useState(false);
   const [playerData, setPlayerData] = useState(null);
 
@@ -31,7 +31,7 @@ const CourseDetails = () => {
   }, [allCourses]);
 
   const toggleSection = (index) => {
-    setOpenSection((prev) => ({ ...prev, [index]: !prev[index] }));
+    setOpenSections((prev) => ({ ...prev, [index]: !prev[index] }));
   };
 
   return courseData ? (
